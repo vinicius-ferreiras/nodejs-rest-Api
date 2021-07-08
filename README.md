@@ -41,7 +41,7 @@ A linguagem de programação a ser utilizada poderá ser javascript ou .Net, é 
 
 ### Exemplo do swagger
 
-![](./assets/swagger_example.png)
+![](./assets/assets_swagger_example.png)
 
 ## Diferenciais
 
