@@ -1,6 +1,8 @@
+const health = require('./controllers/health')
+
 const swaggerAutogen = require('swagger-autogen')()
 
 const outputFile = './swagger_output.json'
-const endpointsFiles = ['./rotas/produtos/index.js']
+const endpointsFiles = ['./index.js']
 
 swaggerAutogen(outputFile, endpointsFiles)

@@ -14,7 +14,7 @@
   "consumes": [],
   "produces": [],
   "paths": {
-    "/produtos/": {
+    "/api/produtos/": {
       "get": {
         "tags": [],
         "description": "",
@@ -39,7 +39,7 @@
         }
       }
     },
-    "/produtos/{idProduto}": {
+    "/api/produtos/{idProduto}": {
       "get": {
         "tags": [],
         "description": "",
@@ -97,6 +97,42 @@
           },
           "404": {
             "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/token": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/health/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }

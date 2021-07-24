@@ -4,11 +4,11 @@ services:
   node:
     build:
       context: .
-      dockerfile: ./Docker/Dockerfile
+      dockerfile: ./Dockerfile
     image: vinicius/node
     container_name: node
     ports:
-      - 8000:8000
+      - 3000:3000
     networks: 
       - production-network
     depends_on: 
