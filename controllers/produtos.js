@@ -1,13 +1,16 @@
 const roteador = require('express').Router()
-const TabelaProduto = require('./TabelaProduto')
-const Produto = require('./Produto')
+const TabelaProduto = require('../repository/TabelaProduto')
+const Produto = require('../model/Produto')
+const { default: axios } = require('axios')
 
 roteador.get('/produtos/', async (requisicao, resposta) => {
     const resultados = await TabelaProduto.listar()
+    const joker = await TabelaProduto.buscarPiada()
     resposta.status(200)
     resposta.send(
         JSON.stringify(resultados)
     )
+    console.log(joker)
 })
 
 roteador.get('/produtos/:idProduto', async (requisicao, resposta) => {

@@ -1,4 +1,4 @@
-const TabelaProduto = require('./TabelaProduto')
+const TabelaProduto = require('../repository/TabelaProduto')
 
 class Produto {
     constructor ({id, produto, descricao, preco, criadoPor, alteradoPor, dataCriacao, dataAtualizacao}) {

@@ -1,3 +1,4 @@
+const { default: axios } = require('axios')
 const Modelo = require('./ModeloTabelaProduto')
 
 module.exports = {
@@ -33,5 +34,11 @@ module.exports = {
         return Modelo.destroy({
             where: {id: id}
         })
+    },
+
+    async buscarPiada(){
+        const piada = await axios.get('https://api.chucknorris.io/jokes/random')
+        const valor = piada.data.value
+        return valor
     }
 }
