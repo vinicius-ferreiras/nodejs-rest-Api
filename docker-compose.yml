@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile
+    image: vinicius/node
+    container_name: node
+    ports:
+      - 8000:8000
+    networks: 
+      - production-network
+    depends_on: 
+      - "mysql"  
+
+  mysql:
+    platform: linux/x86_64
+    image: mysql
+    environment: 
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    networks: 
+      - production-network
+
+networks: 
+    production-network:
+        driver: bridge
